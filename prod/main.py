@@ -38,7 +38,7 @@ display = adafruit_ssd1306.SSD1306_I2C(
     I2C_obj
 )
 keyboard.extensions.append(OLEDLayerDisplay(display))
-encoder.pins(board.D1, board.D0, board.D10)
+encoder.pins(board.D1, board.D0, None)
 keyboard.modules.append(encoder)
 keyboard.modules.append(layers)
 keyboard.extensions.append(MediaKeys())
@@ -66,7 +66,9 @@ keyboard.keymap = [
     ]
 ]
 
-encoder.map[((KC.VOLD, KC.VOLU),),]
+encoder.map[
+    ((KC.VOLD, KC.VOLU),),
+    ]
 
 if __name__ == "__main__":
     keyboard.go()
