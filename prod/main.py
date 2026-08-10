@@ -38,7 +38,7 @@ display = adafruit_ssd1306.SSD1306_I2C(
     I2C_obj
 )
 keyboard.extensions.append(OLEDLayerDisplay(display))
-encoder.pins(board.D1, board.D0, None)
+encoder.pins((board.D1, board.D0, None),)
 keyboard.modules.append(encoder)
 keyboard.modules.append(layers)
 keyboard.extensions.append(MediaKeys())
